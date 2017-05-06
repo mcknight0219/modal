@@ -21,7 +21,7 @@
         <section class="modal-card-body">
           <slot></slot>
         </section>
-        <footer class="modal-card-foot">
+        <footer v-if="showFooter" class="modal-card-foot">
           <a class="button is-primary" @click="ok">{{ okText }}</a>
           <a class="button" @click="cancel">{{ cancelText }}</a>
         </footer>
@@ -47,6 +47,10 @@ export default {
     cancelText: {
       type: String,
       default: 'Cancel'
+    },
+    showFooter: {
+      type: Boolean,
+      default: true
     }
   },
 
